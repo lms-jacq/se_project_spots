@@ -94,6 +94,7 @@
     margin: 0 0 12px;
     height: 80px;
     width: 80px;
+    object-fit: cover;
   }
 
   .profile__name {

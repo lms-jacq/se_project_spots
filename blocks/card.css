@@ -38,7 +38,6 @@
 }
 
 .card__title {
-  height: 24px;
   margin: 0;
   font-weight: 500;
   font-size: 20px;
@@ -51,5 +50,15 @@
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
+  }
+
+  .card__title {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .card__like-button {
+    padding: 0;
+    background-size: contain;
   }
 }

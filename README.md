@@ -1,20 +1,25 @@
 # Project 3: Spots
 
-### Overview
+## Description
 
-- Intro
-- Figma
-- Images
+Spots is an interactive social platform where users have the ability to add and remove photos, and edit their profiles.
 
-**Intro**
+## Tech Stack
 
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
+-HTML
+-CSS
+-Figma
+-Responsive design
 
-**Figma**
+By analyzing the Figma, we (students) will learn how to transfer these elements to our HTML file and apply the correct rules in our CSS classes.
 
-- [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+Along with Figma, media query was applied so that this is tailored between desktop and mobile view. Text overflow was also inserted to ensure these'll be hidden by an ellipsis.
 
-**Github**
+At the end of Project 3, we should be more familiar with designing a responsive website.
+
+## Deployment
+
+This website is deployed to GitHub. Please visit the following page:
 
 https://github.com/lms-jacq/se_project_spots
 

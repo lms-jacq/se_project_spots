@@ -6,10 +6,12 @@ Spots is an interactive social platform where users have the ability to add and 
 
 ## Tech Stack
 
--HTML
--CSS
--Figma
--Responsive design
+- HTML
+- CSS
+- Figma
+- Media query
+- Responsive design
+- Text overflow
 
 By analyzing the Figma, we (students) will learn how to transfer these elements to our HTML file and apply the correct rules in our CSS classes.
 
@@ -21,14 +23,10 @@ At the end of Project 3, we should be more familiar with designing a responsive 
 
 This website is deployed to GitHub. Please visit the following page:
 
-https://github.com/lms-jacq/se_project_spots
+- [Deployment Link](https://lms-jacq.github.io/se_project_spots)
 
-**Video Introduction**
+## Video Introduction
 
-https://drive.google.com/file/d/1wNJSqV3LiDDbpaff5ORSJeS9VarLU73D/view?usp=drive_link
+I made a video briefly describing the project and some of the features that's being done:
 
-**Images**
-
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
-
-Good luck and have fun!
+- [Video Link](https://drive.google.com/file/d/1zrK0XSW5J-rql-QwEsvhQLlDYwqlObLV/view?usp=sharing)

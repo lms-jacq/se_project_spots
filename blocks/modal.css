@@ -1,0 +1,122 @@
+.modal {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.modal_opened {
+  visibility: visible;
+  overflow: hidden;
+}
+
+.modal__container {
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 730px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px 50px;
+  overflow: hidden;
+}
+
+.modal__close-button {
+  background-image: url(../images/close_icon.svg);
+  display: flex;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  height: 40px;
+  width: 40px;
+  opacity: 0.4;
+  padding: 0;
+}
+
+.modal__close-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.modal__title {
+  margin: 0 0 32px;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+  font-size: 16px;
+  color: rgba(33, 33, 33, 0.7);
+}
+
+.modal__input {
+  padding: 16px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(33, 33, 33, 0.4);
+}
+
+.modal__input:hover {
+  border: 1px solid rgba(33, 33, 33, 1);
+  cursor: pointer;
+}
+
+.modal__submit-button {
+  width: 156px;
+  height: 52px;
+  padding: 18px 0;
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  color: rgba(252, 245, 229, 1);
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media screen and (max-width: 627px) {
+  .modal {
+    padding: 0 10px;
+  }
+
+  .modal__container {
+    padding: 12px;
+  }
+
+  .modal__close-button {
+    top: 12px;
+    right: 12px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    margin: 10px 0 34px;
+  }
+
+  .modal__label {
+    margin-bottom: 24px;
+  }
+
+  .modal__input {
+    font-size: 16px;
+  }
+
+  .modal__submit-button {
+    padding: 18px 32px;
+    width: 100%;
+  }
+}

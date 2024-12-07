@@ -48,7 +48,7 @@
 }
 
 .modal__close-button {
-  background: transparent url(../images/close_icon_preview.svg) center no-repeat;
+  background: transparent url(../images/close_icon.svg) center no-repeat;
   display: flex;
   border: none;
   position: absolute;
@@ -56,11 +56,12 @@
   right: 50px;
   height: 40px;
   width: 40px;
-  opacity: 1;
+  opacity: 0.4;
   padding: 0;
 }
 
 .modal__close_type_preview {
+  background: transparent url(../images/close_icon_preview.svg) center no-repeat;
   top: 0;
   right: -52.5px;
 }

@@ -14,11 +14,13 @@
   padding: 0 20px;
   overflow: hidden;
   transition: visibility 0.3s, opacity 0.3s ease-in;
+  opacity: 0;
 }
 
 .modal_opened {
   visibility: visible;
   overflow: hidden;
+  opacity: 1;
 }
 
 .modal__container {

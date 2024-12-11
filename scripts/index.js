@@ -112,8 +112,6 @@ function handleAddCardSubmit(event) {
 
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
-  cardNameInput.value = "";
-  cardLinkInput.value = "";
 
   cardsList.prepend(cardElement);
   event.target.reset();

@@ -57,12 +57,12 @@
 }
 
 .card__like-button_liked {
-  background-image: url("../images/liked-icon-dark.svg");
+  background-image: url("../images/liked_icon_dark.svg");
   opacity: 1;
 }
 
 .card__like-button_liked:hover {
-  background-image: url("../images/liked-icon.svg");
+  background-image: url("../images/liked_icon_hover.svg");
 }
 
 .card__title {
@@ -76,6 +76,12 @@
 }
 
 @media screen and (max-width: 627px) {
+  .card {
+    max-height: none;
+    max-width: none;
+    width: 100%;
+  }
+
   .card__image {
     height: 288px;
   }

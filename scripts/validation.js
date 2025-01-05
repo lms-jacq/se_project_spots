@@ -7,6 +7,12 @@ const settings = {
   errorClass: "modal__error",
 };
 
+const resetValidation = (formElement, inputList, config) => {
+  inputList.forEach((input) => {
+    hideInputError(formElement, input, config);
+  });
+};
+
 function showInputError(
   formElement,
   inputElement,
@@ -76,7 +82,7 @@ function setEventListeners(formElement, options) {
   const { inputSelector, submitButtonSelector } = options;
   const inputList = [...formElement.querySelectorAll(inputSelector)];
   const submitButton = formElement.querySelector(submitButtonSelector);
-  inputEls.forEach((inputElement) => {
+  inputList.forEach((inputElement) => {
     inputEl.addEventListener("input", (event) => {
       checkInputValidity(formElement, inputElement, errorMessage, options);
       toggleButtonState(inputList, submitButton, options);

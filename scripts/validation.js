@@ -2,7 +2,7 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-button",
-  inactiveButtonClass: "modal__submit-button-disabled",
+  inactiveButtonClass: "modal__submit-button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error",
 };
@@ -82,8 +82,11 @@ function setEventListeners(formElement, options) {
   const { inputSelector, submitButtonSelector } = options;
   const inputList = [...formElement.querySelectorAll(inputSelector)];
   const submitButton = formElement.querySelector(submitButtonSelector);
+
+  toggleButtonState(inputList, buttonElement, inactiveButtonClass);
+
   inputList.forEach((inputElement) => {
-    inputEl.addEventListener("input", (event) => {
+    inputElement.addEventListener("input", (event) => {
       checkInputValidity(formElement, inputElement, errorMessage, options);
       toggleButtonState(inputList, submitButton, options);
     });

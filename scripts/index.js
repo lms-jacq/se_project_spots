@@ -64,6 +64,7 @@ const previewModalCaptionElement =
 const previewModalCloseButton = previewModal.querySelector(
   ".modal__close-button"
 );
+const previewModalErrorMsg = previewModal.querySelector(".modal__error");
 
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");

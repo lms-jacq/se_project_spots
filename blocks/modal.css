@@ -148,9 +148,9 @@
   cursor: pointer;
 }
 
-.modal__submit-button:disabled {
+.modal__submit-button_disabled {
   background: rgba(33, 33, 33, 0.5);
-  cursor: not-allowed;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 627px) {
@@ -199,9 +199,6 @@
 
   .modal__input {
     font-size: 16px;
-  }
-
-  .modal__error {
   }
 
   .modal__submit-button {

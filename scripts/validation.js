@@ -16,7 +16,7 @@ const resetValidation = (formElement, inputList, config) => {
 function showInputError(
   formElement,
   inputElement,
-  errorMessage,
+  errorMsg,
   { inputErrorClass, errorClass }
 ) {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
@@ -78,27 +78,26 @@ function enableButton(inputList, buttonElement, { inactiveButtonClass }) {
   }
 }
 
-function setEventListeners(formElement, options) {
-  const { inputSelector, submitButtonSelector } = options;
+function setEventListeners(formElement, config) {
+  const { inputSelector, submitButtonSelector } = config;
   const inputList = [...formElement.querySelectorAll(inputSelector)];
   const submitButton = formElement.querySelector(submitButtonSelector);
 
   toggleButtonState(inputList, buttonElement, inactiveButtonClass);
 
   inputList.forEach((inputElement) => {
-    inputElement.addEventListener("input", (event) => {
-      checkInputValidity(formElement, inputElement, errorMessage, options);
-      toggleButtonState(inputList, submitButton, options);
+    inputElement.addEventListener("input", () => {
+      checkInputValidity(formElement, inputElement, errorMessage, config);
+      toggleButtonState(inputList, submitButton, config);
     });
   });
 }
 
 function enableValidation(config) {
   const formList = document.querySelectorAll(config.formSelector);
-  formList.forEach;
-  (formElement) => {
+  formList.forEach((formElement) => {
     setEventListeners(formElement, config);
-  };
+  });
 }
 
 enableValidation(settings);

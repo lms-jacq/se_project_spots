@@ -39,6 +39,7 @@ const profileDescription = document.querySelector(".profile__description");
 // edit profile elements
 
 const modals = document.querySelectorAll(".modal");
+const modalForm = document.querySelector(".modal__form");
 const editModal = document.querySelector("#edit-modal");
 const editFormElement = editModal.querySelector("#edit-profile");
 const editModalCloseButton = editModal.querySelector(".modal__close-button");
@@ -50,7 +51,7 @@ const editModalDescriptionInput = editModal.querySelector(
 // add cards elements
 
 const cardModal = document.querySelector("#add-card-modal");
-const cardForm = cardModal.querySelector(".modal__form");
+const cardForm = cardModal.querySelector("#add-card-form");
 const cardSubmitButton = cardModal.querySelector(".modal__submit-button");
 const cardModalCloseButton = cardModal.querySelector(".modal__close-button");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
@@ -105,13 +106,13 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeModalEsc);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeModalEsc);
 }
-
-document.addEventListener("keydown", closeModalEsc);
 
 function closeModalEsc(event) {
   if (event.key === "Escape") {
@@ -134,7 +135,7 @@ function handleEditFormSubmit(event) {
   event.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
-  disabledButton(cardSubmitButton, settings);
+
   closeModal(editModal);
 }
 
@@ -151,6 +152,20 @@ function handleAddCardSubmit(event) {
 
   closeModal(cardModal);
 }
+
+function checkFormValidity() {
+  if (modalForm.checkValidity()) {
+    cardSubmitButton.classList.remove("modal__submit-button_disabled");
+  } else {
+    cardSubmitButton.classList.add("modal__submit-button_disabled");
+  }
+}
+
+modalForm.querySelectorAll("input").forEach((input) => {
+  input.addEventListener("input", checkFormValidity);
+});
+
+checkFormValidity();
 
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;

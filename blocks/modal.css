@@ -33,7 +33,7 @@
   padding: 32px 50px;
 }
 
-.modal__container_type-preview {
+.modal_type_preview {
   padding: 16px;
 }
 
@@ -148,9 +148,9 @@
   cursor: pointer;
 }
 
-/* .modal__submit-button_disabled {
+.modal__submit-button_disabled {
   background: rgba(33, 33, 33, 0.5);
-} */
+}
 
 @media screen and (max-width: 627px) {
   .modal {

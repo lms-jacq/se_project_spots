@@ -111,6 +111,8 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
+document.addEventListener("keydown", closeModalEsc);
+
 function closeModalEsc(event) {
   if (event.key === "Escape") {
     const modalOpen = document.querySelector(".modal_opened");

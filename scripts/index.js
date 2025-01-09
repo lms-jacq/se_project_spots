@@ -110,6 +110,24 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
+function closeModalOverlay(event) {
+  if (event.target.classList.contains("modal")) {
+    closeModal(event.target);
+  }
+}
+
+function closeModalEsc(event) {
+  if (event.key === "Escape") {
+    console.log(event.key);
+    closeModal(event.target);
+  }
+}
+
+modal.forEach(modal) => {
+  modal.addEventListener("keydown", closeModalEsc);
+  modal.addEventListener("mousedown", closeModalOverlay);
+}
+
 function handleEditFormSubmit(event) {
   event.preventDefault();
   profileName.textContent = editModalNameInput.value;

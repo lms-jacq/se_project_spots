@@ -132,6 +132,7 @@ function handleEditFormSubmit(event) {
   event.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
+  disabledButton(cardSubmitButton, config);
   closeModal(editModal);
 }
 
@@ -144,7 +145,7 @@ function handleAddCardSubmit(event) {
   cardsList.prepend(cardElement);
   event.target.reset();
 
-  disableButton(cardSubmitButton, settings);
+  disabledButton(cardSubmitButton, config);
 
   closeModal(cardModal);
 }

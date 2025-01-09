@@ -148,10 +148,9 @@
   cursor: pointer;
 }
 
-.modal__submit-button_disabled {
+/* .modal__submit-button_disabled {
   background: rgba(33, 33, 33, 0.5);
-  pointer-events: none;
-}
+} */
 
 @media screen and (max-width: 627px) {
   .modal {

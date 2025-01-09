@@ -38,6 +38,7 @@ const profileDescription = document.querySelector(".profile__description");
 
 // edit profile elements
 
+const modals = document.querySelectorAll(".modal");
 const editModal = document.querySelector("#edit-modal");
 const editFormElement = editModal.querySelector("#edit-profile");
 const editModalCloseButton = editModal.querySelector(".modal__close-button");
@@ -109,6 +110,23 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
+
+function closeModalEsc(event) {
+  if (event.key === "Escape") {
+    const modalOpen = document.querySelector(".modal_opened");
+    closeModal(modalOpen);
+  }
+}
+
+function closeOverlay(event) {
+  if (event.target.classList.contains("modal")) {
+    closeModal(event.target);
+  }
+}
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", closeOverlay);
+});
 
 function handleEditFormSubmit(event) {
   event.preventDefault();

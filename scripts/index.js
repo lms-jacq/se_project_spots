@@ -156,8 +156,10 @@ function handleAddCardSubmit(event) {
 function checkFormValidity() {
   if (modalForm.checkValidity()) {
     cardSubmitButton.classList.remove("modal__submit-button_disabled");
+    cardSubmitButton.disabled = false;
   } else {
     cardSubmitButton.classList.add("modal__submit-button_disabled");
+    cardSubmitButton.disabled = true;
   }
 }
 

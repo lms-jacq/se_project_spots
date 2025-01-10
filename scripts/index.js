@@ -39,7 +39,6 @@ const profileDescription = document.querySelector(".profile__description");
 // edit profile elements
 
 const modals = document.querySelectorAll(".modal");
-const modalForm = document.querySelector(".modal__form");
 const editModal = document.querySelector("#edit-modal");
 const editFormElement = editModal.querySelector("#edit-profile");
 const editModalCloseButton = editModal.querySelector(".modal__close-button");
@@ -153,21 +152,21 @@ function handleAddCardSubmit(event) {
   closeModal(cardModal);
 }
 
-function checkFormValidity() {
-  if (modalForm.checkValidity()) {
-    cardSubmitButton.classList.remove("modal__submit-button_disabled");
-    cardSubmitButton.disabled = false;
-  } else {
-    cardSubmitButton.classList.add("modal__submit-button_disabled");
-    cardSubmitButton.disabled = true;
-  }
-}
+// function checkFormValidity() {
+//   if (modalForm.checkValidity()) {
+//     cardSubmitButton.classList.remove("modal__submit-button_disabled");
+//     cardSubmitButton.disabled = false;
+//   } else {
+//     cardSubmitButton.classList.add("modal__submit-button_disabled");
+//     cardSubmitButton.disabled = true;
+//   }
+// }
 
-modalForm.querySelectorAll("input").forEach((input) => {
-  input.addEventListener("input", checkFormValidity);
-});
+// modalForm.querySelectorAll("input").forEach((input) => {
+//   input.addEventListener("input", checkFormValidity);
+// });
 
-checkFormValidity();
+// checkFormValidity();
 
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;

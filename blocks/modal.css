@@ -148,10 +148,10 @@
   cursor: pointer;
 }
 
-/* .modal__submit-button_disabled {
+.modal__submit-button_disabled {
   background: rgba(33, 33, 33, 0.5);
   cursor: not-allowed;
-} */
+}
 
 @media screen and (max-width: 627px) {
   .modal {

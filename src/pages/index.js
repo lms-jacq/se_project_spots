@@ -2,7 +2,7 @@ import { enableValidation, settings } from "../scripts/validation.js";
 
 import "./index.css";
 
-import avatarSrc from "./src/images/avatar.jpg";
+import avatarSrc from "./images/avatar.jpg";
 
 const avatarImage = document.getElementById("avatar");
 avatarImage.src = avatarSrc;

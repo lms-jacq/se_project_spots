@@ -2,10 +2,10 @@ import { enableValidation, settings } from "../scripts/validation.js";
 
 import "./index.css";
 
-import avatarSrc from "./images/avatar.jpg";
+// import avatarSrc from "./images/avatar.jpg";
 
-const avatarImage = document.getElementById("avatar");
-avatarImage.src = avatarSrc;
+// const avatarImage = document.getElementById("avatar");
+// avatarImage.src = avatarSrc;
 
 const initialCards = [
   {

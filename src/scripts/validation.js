@@ -7,7 +7,7 @@ export const settings = {
   errorClass: "modal__error",
 };
 
-const resetValidation = (formElement, inputList, config) => {
+export const resetValidation = (formElement, inputList, config) => {
   inputList.forEach((input) => {
     hideInputError(formElement, input, config);
   });
@@ -65,7 +65,7 @@ function toggleButtonState(inputList, buttonElement, config) {
   }
 }
 
-function disabledButton(buttonElement, config) {
+export function disabledButton(buttonElement, config) {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
 }
@@ -99,7 +99,7 @@ export function enableValidation(config) {
   });
 }
 
-// enableValidation(settings);
+enableValidation(settings);
 
 /*
 const showInputError = (formElement, inputElement, errorMessage, config) => {

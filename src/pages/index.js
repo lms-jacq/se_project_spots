@@ -1,4 +1,9 @@
-import { enableValidation, settings } from "../scripts/validation.js";
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+  disabledButton,
+} from "../scripts/validation.js";
 
 import "./index.css";
 import { setButtonText, setDeleteButtonText } from "../utils/helpers.js";

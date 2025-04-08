@@ -53,6 +53,17 @@
   margin: 0;
 }
 
+.modal__container-delete {
+  background-color: white;
+  max-width: 630px;
+  width: 100%;
+  padding: 32px 20px;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
 .modal__close-button {
   background: transparent url(../images/close_icon.svg) center no-repeat;
   display: flex;
@@ -77,6 +88,12 @@
   cursor: pointer;
 }
 
+.modal__close-button-delete {
+  background: transparent url(../images/close_icon.svg) center no-repeat;
+  cursor: pointer;
+  position: absolute;
+}
+
 .modal__caption {
   padding: 4px 8px;
   margin: 8px 0 0 0;
@@ -98,6 +115,16 @@
   margin: 0 0 32px;
   font-size: 32px;
   line-height: 1;
+}
+
+.modal__title-delete {
+  width: auto;
+  justify-content: space-between;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
 }
 
 .modal__label {

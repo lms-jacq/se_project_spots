@@ -65,7 +65,7 @@ function toggleButtonState(inputList, buttonElement, config) {
   }
 }
 
-export function disabledButton(buttonElement, config) {
+function disabledButton(buttonElement, config) {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
 }
@@ -93,7 +93,7 @@ function setEventListeners(formElement, config) {
 }
 
 export function enableValidation(config) {
-  const formList = document.querySelectorAll(config.formSelector);
+  const formList = [...document.querySelectorAll(config.formSelector)];
   formList.forEach((formElement) => {
     setEventListeners(formElement, config);
   });

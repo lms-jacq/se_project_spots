@@ -189,7 +189,7 @@ function getCardElement(data) {
   // cardImage.addEventListener("click", () => {
   //   openModal(previewModal);
 
-  cardImage.addEventListener("click", () => handleImageClick(data));
+  // cardImage.addEventListener("click", () => handleImageClick(data));
 
   previewModalCaptionElement.textContent = data.name;
   previewModalImageElement.src = data.link;
@@ -199,6 +199,7 @@ function getCardElement(data) {
 }
 
 function openModal(modal) {
+  console.log("open");
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeModalEsc);
   modal.addEventListener("mousedown", closeOverlay);
@@ -374,6 +375,14 @@ avatarAddlButton.addEventListener("click", () => {
 
 avatarModalCloseButton.addEventListener("click", () => {
   closeModal(avatarModal);
+});
+
+deleteCloseButton.addEventListener("click", () => {
+  closeModal(deleteModal);
+});
+
+cancelButton.addEventListener("click", () => {
+  closeModal(deleteModal);
 });
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);

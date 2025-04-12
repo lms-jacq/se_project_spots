@@ -4,11 +4,13 @@ class Api {
     this._headers = headers;
   }
 
-  // other methods for working with the API such as getUserInfo (different base url)
+  _checkResponse(res) {
+    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+  }
 
   getAppInfo() {
     // call getUserInfo in this array
-    return Promise.all([this.getInitialCards()]);
+    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
   }
 
   getInitialCards() {
@@ -37,12 +39,7 @@ class Api {
         name,
         about,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(this._checkResponse);
   }
 
   editAvatarInfo(avatar) {
@@ -52,12 +49,7 @@ class Api {
       body: JSON.stringify({
         avatar,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(this._checkResponse);
   }
 
   // implement postCard api
@@ -73,24 +65,14 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(this._checkResponse);
   }
 
   changeLikeStatus(id, isLiked) {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(this._checkResponse);
   }
 }
 

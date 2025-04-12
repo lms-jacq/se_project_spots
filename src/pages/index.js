@@ -2,9 +2,10 @@ import {
   enableValidation,
   settings,
   resetValidation,
+  disabledButton,
 } from "../scripts/validation.js";
 
-import "./index.css";
+import "../pages/index.css";
 import { setButtonText, setDeleteButtonText } from "../utils/helpers.js";
 import Api from "../utils/Api.js";
 
@@ -199,7 +200,6 @@ function getCardElement(data) {
 }
 
 function openModal(modal) {
-  console.log("open");
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeModalEsc);
   modal.addEventListener("mousedown", closeOverlay);
@@ -233,8 +233,9 @@ function handleEditFormSubmit(event) {
 
   //change text content to "Saving..."
   const submitButton = event.submitter;
-  // submitButton.textContent = "Saving...";
-  setButtonText(cardSubmitButton, true, "Save", "Saving...");
+  submitButton.textContent = "Saving...";
+  setButtonText(submitButton, true);
+  // setButtonText(cardSubmitButton, true, "Save", "Saving...");
 
   api
     .editUserInfo({
@@ -250,7 +251,7 @@ function handleEditFormSubmit(event) {
     .catch(console.error)
     .finally(() => {
       // call setButtonText instead
-      setButtonText(cardSubmitButton, true, "Save", "Saving...");
+      setButtonText(submitButton, false);
     });
 }
 

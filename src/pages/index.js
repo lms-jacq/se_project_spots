@@ -233,7 +233,6 @@ function handleEditFormSubmit(event) {
 
   //change text content to "Saving..."
   const submitButton = event.submitter;
-  submitButton.textContent = "Saving...";
   setButtonText(submitButton, true);
   // setButtonText(cardSubmitButton, true, "Save", "Saving...");
 
@@ -270,7 +269,7 @@ function handleAddCardSubmit(event) {
   api
     .postCard(inputValues)
     .then((card) => {
-      const cardElement = getCardElement(inputValues);
+      const cardElement = getCardElement(card);
       cardsList.prepend(cardElement);
       disabledButton(cardModalSubmitButton, settings);
       closeModal(cardModal);

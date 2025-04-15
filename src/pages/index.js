@@ -152,7 +152,7 @@ function handleLike(event, id) {
   const isLiked = event.target.classList.contains("card__like-button_liked");
 
   api
-    .changeLikeStatus(id, !isLiked)
+    .changeLikeStatus(id, isLiked)
     .then((data) => {
       event.target.classList.toggle("card__like-button_liked", data.isLiked);
     })

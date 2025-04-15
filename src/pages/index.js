@@ -53,12 +53,6 @@ const api = new Api({
   },
 });
 
-// api
-//   .getInitialCards()
-//   .then((cards) => {})
-//   .catch(console.error);
-
-// destructure the second item in the callback of the .then()
 api
   .getAppInfo()
   .then(([cards, userInfo]) => {
@@ -70,10 +64,6 @@ api
       const cardElement = getCardElement(item);
       cardsList.append(cardElement);
     });
-
-    // handle the user's information
-    // set src of the avatar image
-    // set the textContent of both the text elements
   })
   .catch(console.error);
 
@@ -143,12 +133,6 @@ let selectedCard;
 let selectedCardId;
 
 function handleLike(event, id) {
-  // remove - event.target.classList.toggle("card__like-button_liked");
-  // 1. check whether card is currently liked or not
-  // 2. call the changeLikeStatus method, passing it the approrpaite arguments
-  // 3. handle the respnse (.then and .catch)
-  // 4. in the .then, toggle active class
-
   const isLiked = event.target.classList.contains("card__like-button_liked");
 
   api
@@ -169,7 +153,6 @@ function getCardElement(data) {
   const cardLikeButton = cardElement.querySelector(".card__like-button");
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
 
-  // if the card is liked, set the active class on the card
   if (data.isLiked) {
     cardLikeButton.classList.add("card__like-button_liked");
   }
@@ -187,14 +170,12 @@ function getCardElement(data) {
     selectedCardId = data._id;
   });
 
-  // cardImage.addEventListener("click", () => {
-  //   openModal(previewModal);
-
-  // cardImage.addEventListener("click", () => handleImageClick(data));
-
-  previewModalCaptionElement.textContent = data.name;
-  previewModalImageElement.src = data.link;
-  previewModalImageElement.alt = data.name;
+  cardImage.addEventListener("click", () => {
+    previewModalCaptionElement.textContent = data.name;
+    previewModalImageElement.src = data.link;
+    previewModalImageElement.alt = data.name;
+    openModal(previewModal);
+  });
 
   return cardElement;
 }
@@ -224,17 +205,11 @@ function closeOverlay(event) {
   }
 }
 
-// modals.forEach((modal) => {
-//   modal.addEventListener("mousedown", closeOverlay);
-// });
-
 function handleEditFormSubmit(event) {
   event.preventDefault();
 
-  //change text content to "Saving..."
   const submitButton = event.submitter;
   setButtonText(submitButton, true);
-  // setButtonText(cardSubmitButton, true, "Save", "Saving...");
 
   api
     .editUserInfo({
@@ -242,19 +217,15 @@ function handleEditFormSubmit(event) {
       about: editModalDescriptionInput.value,
     })
     .then((data) => {
-      // use data argument instead of the input values
       profileName.textContent = editModalNameInput.value;
       profileDescription.textContent = editModalDescriptionInput.value;
       closeModal(editModal);
     })
     .catch(console.error)
     .finally(() => {
-      // call setButtonText instead
       setButtonText(submitButton, false);
     });
 }
-
-// implement loading text for all other form submissions
 
 function handleAddCardSubmit(event) {
   event.preventDefault();
@@ -262,9 +233,6 @@ function handleAddCardSubmit(event) {
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardModalSubmitButton = event.submitter;
   setButtonText(cardModalSubmitButton, true, "Save", "Saving...");
-
-  // cardsList.prepend(cardElement);
-  // event.target.reset();
 
   api
     .postCard(inputValues)
@@ -281,7 +249,6 @@ function handleAddCardSubmit(event) {
     });
 }
 
-// finish avatar submission handler
 function handleAvatarSubmit(event) {
   event.preventDefault();
   const avatarSubmitButton = event.submitter;
@@ -290,7 +257,6 @@ function handleAvatarSubmit(event) {
   api
     .editAvatarInfo(avatarLinkInput.value)
     .then((data) => {
-      // make this work
       profileAvatar.src = data.avatar;
       closeModal(avatarModal);
       avatarForm.reset();

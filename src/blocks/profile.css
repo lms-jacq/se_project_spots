@@ -5,6 +5,38 @@
   font-family: "Poppins Medium", Arial, Helvetica, sans-serif;
 }
 
+.profile__avatar-container {
+  position: relative;
+  margin-right: 20px;
+}
+
+.profile__avatar-button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  visibility: hidden;
+  background: transparent;
+  border: none;
+  bottom: 10px;
+  right: 15px;
+  gap: 8px;
+}
+
+.profile__avatar-container:hover .profile__avatar-button {
+  visibility: visible;
+  cursor: pointer;
+}
+
+.profile__avatar-button::after {
+  content: "Edit Avatar";
+  font-weight: 500;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 1);
+}
+
 .profile__avatar {
   height: 190px;
   width: 190px;
@@ -75,7 +107,6 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 16px;
-  cursor: pointer;
 }
 
 .profile__add-button:hover {
@@ -90,6 +121,17 @@
     align-items: center;
     text-align: center;
     padding-top: 20px;
+  }
+
+  .profile__avatar-button {
+    visibility: visible;
+    border-radius: 6px;
+    top: 52px;
+    left: 52px;
+  }
+
+  .profile__avatar-button::after {
+    content: "";
   }
 
   .profile__avatar {
